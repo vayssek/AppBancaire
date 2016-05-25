@@ -8,6 +8,7 @@ import org.junit.Test;
 
 public class BankTest {
 
+	private static final Customer ONE_CUSTOMER = new Customer("Kevin","VAYSSE");
 	private Bank bank;
 	private Customer customer;
 	private Account account;
@@ -17,7 +18,7 @@ public class BankTest {
 	public void setup() {
 	// Initialization of test parameters
 		bank = new Bank();
-		customer = new Customer("Kevin","VAYSSE");
+		customer = ONE_CUSTOMER;
 		account = new Account("123456789",0);
 	}
 	
@@ -57,6 +58,16 @@ public class BankTest {
 		List<Account> result = bank.getAccounts();
 		//THEN
 		assertFalse(result.isEmpty());
+	}
+	
+	@Test
+	public void returnOneClient(){
+		//GIVEN	
+		bank.getCustomers().add(customer);
+		//WHEN
+		Customer result = bank.getCustomer("Kevin", "VAYSSE");
+		//THEN
+		assertEquals(result,ONE_CUSTOMER);
 	}
 	
 	

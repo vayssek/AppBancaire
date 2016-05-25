@@ -21,4 +21,13 @@ public class Bank {
 		return accountList;
 	}
 
+	public Customer getCustomer(String firstName,String lastName){
+		 for(Customer customer : customerList ){
+			 if (firstName==customer.getFirstName() && lastName==customer.getLastName()){
+				return customer;
+			 }
+		}
+		 return null;
+	}
+	
 }
