@@ -2,8 +2,10 @@ package appBancaire;
 
 class Account {
 	
+	private Customer customer;
 	private String number;
 	private double balance;
+	
 	
 	public String getNumber() {
 		return number;
