@@ -2,7 +2,6 @@ package appBancaire;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,11 +43,20 @@ public class BankTest {
 	@Test
 	public void returnListAccounts(){
 		//GIVEN
-		bank.getCustomers();
 		//WHEN
 		List<Account> result = bank.getAccounts();
 		//THEN
 		assertTrue(result.isEmpty());
+	}
+	
+	@Test
+	public void returnListAccountsAdded(){
+		//GIVEN	
+		bank.getAccounts().add(account);
+		//WHEN
+		List<Account> result = bank.getAccounts();
+		//THEN
+		assertFalse(result.isEmpty());
 	}
 	
 	

@@ -1,6 +1,6 @@
 package appBancaire;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 class AccountTest {
 
