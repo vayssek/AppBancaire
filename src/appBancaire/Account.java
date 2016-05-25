@@ -2,10 +2,14 @@ package appBancaire;
 
 class Account {
 	
-	private Customer customer;
+	//private Customer customer;
 	private String number;
 	private double balance;
 	
+	public Account(String number, double balance){
+		this.number=number;
+		this.balance=balance;
+	}
 	
 	public String getNumber() {
 		return number;

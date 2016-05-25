@@ -17,7 +17,7 @@ public class Bank {
 		return customerList;
 	}
 
-	public List<Account> getAccountList() {
+	public List<Account> getAccounts() {
 		return accountList;
 	}
 
