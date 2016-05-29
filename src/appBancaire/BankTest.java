@@ -110,4 +110,14 @@ public class BankTest {
 		assertEquals(result,ONE_CUSTOMER);
 	}
 	
+	@Test
+	public void addExistingCustomer(){
+		//GIVEN
+		Customer ExistedCustomer = bank.addCustomer(ONE_CUSTOMER);
+		//WHEN
+		Customer result = bank.addCustomer(ExistedCustomer);
+		//THEN
+		assertEquals(result,ExistedCustomer);
+	}
+	
 }
