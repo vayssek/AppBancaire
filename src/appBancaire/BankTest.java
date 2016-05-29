@@ -100,4 +100,14 @@ public class BankTest {
 		//THEN
 		assertNull(result);
 	}
+	
+	@Test
+	public void addNewCustomer(){
+		//GIVEN	
+		//WHEN
+		Customer result = bank.addCustomer(ONE_CUSTOMER);
+		//THEN
+		assertEquals(result,ONE_CUSTOMER);
+	}
+	
 }

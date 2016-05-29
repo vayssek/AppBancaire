@@ -38,4 +38,21 @@ public class Bank {
 		}
 		return null;
 	}
+
+	public Customer addCustomer(Customer newCustomer) {
+		boolean contain = false;
+		int index=-1;
+		for(Customer customer : this.customerList){
+			if (customer == newCustomer) {
+				contain=true;
+				index++;
+				break;
+		}}
+		if(contain==false){
+			this.customerList.add(newCustomer);
+			index= this.customerList.lastIndexOf(newCustomer);
+			return this.customerList.get(index);
+		}	
+		return this.customerList.get(index);
+}
 }
