@@ -29,5 +29,13 @@ public class Bank {
 		}
 		 return null;
 	}
-	
+
+	public Account getAccount(String num) {
+		for(Account account : accountList ){
+			 if (num==account.getNumber()){
+				return account;
+			 }
+		}
+		return null;
+	}
 }

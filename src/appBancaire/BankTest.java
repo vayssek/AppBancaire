@@ -9,6 +9,7 @@ import org.junit.Test;
 public class BankTest {
 
 	private static final Customer ONE_CUSTOMER = new Customer("Kevin","VAYSSE");
+	private static final Account ONE_ACCOUNT = new Account("123456789",0);
 	private Bank bank;
 	private Customer customer;
 	private Account account;
@@ -19,7 +20,7 @@ public class BankTest {
 	// Initialization of test parameters
 		bank = new Bank();
 		customer = ONE_CUSTOMER;
-		account = new Account("123456789",0);
+		account = ONE_ACCOUNT;
 	}
 	
 	@Test
@@ -70,5 +71,33 @@ public class BankTest {
 		assertEquals(result,ONE_CUSTOMER);
 	}
 	
+	@Test
+	public void returnMissingClient(){
+		//GIVEN	
+		bank.getCustomers().add(customer);
+		//WHEN
+		Customer result = bank.getCustomer("Kevin", "Veisse");
+		//THEN
+		assertNull(result);
+	}
 	
+	@Test
+	public void returnOneAccount(){
+		//GIVEN	
+		bank.getAccounts().add(account);
+		//WHEN
+		Account result = bank.getAccount("123456789");
+		//THEN
+		assertEquals(result,ONE_ACCOUNT);
+	}
+	
+	@Test
+	public void returnMissingAccount(){
+		//GIVEN	
+		bank.getAccounts().add(account);
+		//WHEN
+		Account result = bank.getAccount("000000000");
+		//THEN
+		assertNull(result);
+	}
 }
